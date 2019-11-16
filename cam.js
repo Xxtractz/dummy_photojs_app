@@ -9,6 +9,8 @@ const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+const capture_btn = document.getElementById("capture_btn");
+
 /**
  * 
  */
@@ -21,5 +23,7 @@ const _navigate = navigator.mediaDevices;
  }
 
 function Snap(){
-    
+    ctx.drawImage(video,0,0);
+    video.style.display = "none";
+    capture_btn.style.display ="none"
 }
