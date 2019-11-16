@@ -1,0 +1,1 @@
+This is a dummy photo project, Its basic very basic.
