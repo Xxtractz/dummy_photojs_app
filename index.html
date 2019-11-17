@@ -11,11 +11,15 @@
 </head>
 <body>
     <h1>This camera</h1>
-    <video id="video" autoplay></video>
-    <canvas id="canvas"></canvas>
+    <video id="video" height="300px" width="400px" autoplay></video>
+    <canvas id="canvas" height="300px" width="400px" ></canvas>
     <div id="stickers">
-        <img src="./images/sticker_1.png" alt="" srcset=""/>
-        <img src="./images/sticker_2.png" alt="" srcset=""/>
+       <a onclick="addSticker('sticker_')">
+           <img id="sticker_1" src="./images/sticker_1.png" alt="" srcset=""/>
+        </a>
+        <a onclick="addSticker('sticker_')">
+            <img id="sticker_2" src="./images/sticker_2.png" alt="" srcset=""/>
+        </a>
     </div>
     <button id="capture_btn" onclick="Snap()">Capture</button>
     <!-- Include js at the Bottom- good practice -->

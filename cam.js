@@ -16,14 +16,20 @@ const capture_btn = document.getElementById("capture_btn");
  */
 const _navigate = navigator.mediaDevices;
 
- if (_navigate && _navigate.getUserMedia()) {
+ if (_navigate && _navigate.getUserMedia) {
      _navigate.getUserMedia({video : true}).then(function (stream){
          video.srcObject = stream;
      })
  }
 
 function Snap(){
-    ctx.drawImage(video,0,0);
+    ctx.drawImage(video,0,0,400,300);
     video.style.display = "none";
     capture_btn.style.display ="none"
+}
+
+function addSticker(string){
+    var img = document.getElementById(string);
+
+    ctx.drawImage(img, 20, 0 ,400,300);
 }
