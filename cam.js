@@ -11,13 +11,20 @@ const ctx = canvas.getContext("2d");
 
 const capture_btn = document.getElementById("capture_btn");
 
+const clear_btn = document.getElementById("clear_btn");
+
+
 const stickers = document.getElementById("stickers");
 
 
 var imgadded;
 
+/**
+ * Initialising attributes
+ */
 stickers.style.visibility = "hidden";
 canvas.style.visibility = "hidden";
+clear_btn.style.visibility = "hidden";
 /**
  * Streams the video on html Tag
  * <video id="video" height="300px" width="400px" autoplay></video>
@@ -43,10 +50,16 @@ function Snap(){
     imgadded = 0;
     stickers.style.visibility = "visible";
     canvas.style.visibility = "visible";
+    clear_btn.style.visibility = "visible";
     video.style.display = "none";
     capture_btn.style.display ="none"
 }
 
+/**
+ * Add sticker i
+ * string will contain the id of the sticker so that it can be add 
+ * since there's only 2 stickers i added two options
+ */
 function addSticker(string){
     var img = document.getElementById(string);
     if (imgadded == 0) {
@@ -61,4 +74,8 @@ function addSticker(string){
 
 function clear(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stickers.style.visibility = "hidden";
+    canvas.style.visibility = "hidden";
+    video.style.display = "visible";
+    capture_btn.style.display ="visible"
 }
