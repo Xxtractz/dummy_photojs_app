@@ -52,7 +52,7 @@ function Snap(){
     canvas.style.display = "";
     clear_btn.style.display = "";
     video.style.display = "none";
-    capture_btn.style.display = "none";
+    capture_btn.style.display ="none";
 }
 
 /**
@@ -73,14 +73,11 @@ function addSticker(string){
     }
 }
 
-
-function Clear() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.restore();
+function Clear(){
+    ctx.clearRect(0, 0,canvas.width, canvas.height);
     stickers.style.display = "none";
     canvas.style.display = "none";
     clear_btn.style.display = "none";
     video.style.display = "";
-    capture_btn.style.display = "";
+    capture_btn.style.display ="";
 }
-
