@@ -19,6 +19,8 @@ var imgadded;
 stickers.style.visibility = "hidden";
 canvas.style.visibility = "hidden";
 /**
+ * Streams the video on html Tag
+ * <video id="video" height="300px" width="400px" autoplay></video>
  * 
  */
 const _navigate = navigator.mediaDevices;
@@ -29,9 +31,16 @@ const _navigate = navigator.mediaDevices;
      })
  }
 
+ /**
+  * Snap() function captures the image
+  * activates some few attributes so that you can edit or modify
+  * displays editable image on html Tag
+  *     <canvas id="canvas" height="300px" width="400px" ></canvas>
+  */
+
 function Snap(){
-    imgadded = 0;
     ctx.drawImage(video,0,0,400,300);
+    imgadded = 0;
     stickers.style.visibility = "visible";
     canvas.style.visibility = "visible";
     video.style.display = "none";
