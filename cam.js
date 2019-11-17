@@ -14,7 +14,10 @@ const capture_btn = document.getElementById("capture_btn");
 const stickers = document.getElementById("stickers");
 
 
+var imgadded;
+
 stickers.style.visibility = "hidden";
+canvas.style.visibility = "hidden";
 /**
  * 
  */
@@ -27,16 +30,24 @@ const _navigate = navigator.mediaDevices;
  }
 
 function Snap(){
+    imgadded = 0;
     ctx.drawImage(video,0,0,400,300);
     stickers.style.visibility = "visible";
+    canvas.style.visibility = "visible";
     video.style.display = "none";
     capture_btn.style.display ="none"
 }
 
 function addSticker(string){
     var img = document.getElementById(string);
-
-    ctx.drawImage(img, 20, 0 ,100,70);
+    if (imgadded == 0) {
+        ctx.drawImage(img, 20, 0 ,100,70);
+        imgadded = 1;
+    }
+    else
+    {
+        ctx.drawImage(img, 20, 100 ,100,70);
+    }
 }
 
 function clear(){
