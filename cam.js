@@ -51,8 +51,8 @@ function Snap(){
     stickers.style.visibility = "visible";
     canvas.style.visibility = "visible";
     clear_btn.style.visibility = "visible";
-    video.style.display = "none";
-    capture_btn.style.display ="none"
+    video.style.display = "hidden";
+    capture_btn.style.visibility ="hidden";
 }
 
 /**
@@ -68,14 +68,15 @@ function addSticker(string){
     }
     else
     {
+        imgadded = 0;
         ctx.drawImage(img, 20, 100 ,100,70);
     }
 }
 
 function clear(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, 400,300);
     stickers.style.visibility = "hidden";
     canvas.style.visibility = "hidden";
-    video.style.display = "visible";
-    capture_btn.style.display ="visible"
+    video.style.visibility = "visible";
+    capture_btn.style.visibility ="visible"
 }
