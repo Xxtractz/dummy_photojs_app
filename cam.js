@@ -22,9 +22,9 @@ var imgadded;
 /**
  * Initialising attributes
  */
-stickers.style.visibility = "hidden";
-canvas.style.visibility = "hidden";
-clear_btn.style.visibility = "hidden";
+stickers.style.display = "none";
+canvas.style.display = "none";
+clear_btn.style.display = "none";
 /**
  * Streams the video on html Tag
  * <video id="video" height="300px" width="400px" autoplay></video>
@@ -48,11 +48,11 @@ const _navigate = navigator.mediaDevices;
 function Snap(){
     ctx.drawImage(video,0,0,400,300);
     imgadded = 0;
-    stickers.style.visibility = "visible";
-    canvas.style.visibility = "visible";
-    clear_btn.style.visibility = "visible";
-    video.style.display = "hidden";
-    capture_btn.style.visibility ="hidden";
+    stickers.style.display = "";
+    canvas.style.display = "";
+    clear_btn.style.display = "";
+    video.style.display = "none";
+    capture_btn.style.display = "none";
 }
 
 /**
@@ -73,10 +73,14 @@ function addSticker(string){
     }
 }
 
-function clear(){
-    ctx.clearRect(0, 0, 400,300);
-    stickers.style.visibility = "hidden";
-    canvas.style.visibility = "hidden";
-    video.style.visibility = "visible";
-    capture_btn.style.visibility ="visible"
+
+function Clear() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.restore();
+    stickers.style.display = "none";
+    canvas.style.display = "none";
+    clear_btn.style.display = "none";
+    video.style.display = "";
+    capture_btn.style.display = "";
 }
+
